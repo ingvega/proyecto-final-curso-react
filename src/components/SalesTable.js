@@ -1,44 +1,28 @@
 import React from 'react';
-import { useTable } from 'react-table';
-import { usersData } from '../data/usersData';
+import { useTable, useSortBy } from 'react-table';
 import '../styles/styles.css';
 
-const SalesTable = ()=>{
-    const data = React.useMemo(()=>usersData,[]);
-    const columns = React.useMemo(()=>[
-            {Header: 'Clave', accessor: 'id'},
-            {Header: 'Usuario', accessor: 'name'},
-            {Header: 'Correo', accessor: 'email'},
-            {Header: 'Edad', accessor: 'age'}
-        ],[]);
-    const {getTableProps, getTableBodyProps, headerGroups, rows, 
-        prepareRow} = 
-        useTable({columns,data});
+const SalesTable = ({salesData})=>{
+    //const { state } = useContext(SalesContext);
+    const sortBy = [];
 
     return (
-        <table {...getTableProps()} className="data-table">
+        <table className="data-table">
             <thead>
-                {headerGroups.map(hg => (
-                    <tr {...hg.getHeaderGroupProps()}>
-                        {hg.headers.map(col=>(
-                            <th {...col.getHeaderProps()}>
-                                {col.render('Header')}
-                            </th>
-                        ))}
-                    </tr>
-                ))}
+                <th>Nombre del Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Fecha de venta</th>
             </thead>
-            <tbody {...getTableBodyProps()}>
-                {rows.map( r => {
-                    prepareRow(r);
+            <tbody>
+                {salesData.map( r => {
                     return(
-                        <tr {...r.getRowProps()}>
-                            {r.cells.map(celda =>(
-                            <td {...celda.getCellProps()}>
-                                {celda.render('Cell')}
-                            </td>
-                        ))}
-                    </tr>
+                        <tr>
+                            <td>{r.producto}</td>
+                            <td>{r.cantidad}</td>
+                            <td>{r.precio}</td>
+                            <td>{r.fecha}</td>
+                        </tr>
                     );
                 })}
             </tbody>

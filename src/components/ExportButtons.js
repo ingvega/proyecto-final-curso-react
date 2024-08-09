@@ -1,10 +1,9 @@
 import React from 'react';
 import { CSVLink } from 'react-csv';
 import * as XLSX from 'xlsx';
-import { salesData } from '../data/salesData';
 import '../styles/styles.css';
 
-const ExportButtons =()=>{
+const ExportButtons =({salesData})=>{
     //Exportación a excel
     const handleExcelExport = ()=>{
         const ws = XLSX.utils.json_to_sheet(salesData);

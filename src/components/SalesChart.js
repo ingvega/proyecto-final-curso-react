@@ -1,21 +1,19 @@
 import React from 'react';
 import { BarChart, Bar, Label, XAxis, YAxis, Tooltip, Legend, 
     ResponsiveContainer, CartesianGrid } from 'recharts';
-import { sales } from '../data/sales';
 import '../styles/styles.css';
 
-const SalesChart=()=>{
+const SalesChart=({salesData})=>{
     return (
         <ResponsiveContainer className="contenedor-responsive">
-            <BarChart data={sales}>
+            <BarChart data={salesData}>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey="month">
-                    <Label value="Cantidad" offset={0} position="insideBottom" />
+                <XAxis dataKey="producto">                                    
                 </XAxis>
                 <YAxis/>
                 <Tooltip/>
                 <Legend/>
-                <Bar dataKey="amount" fill="#82ca9d"/>
+                <Bar dataKey="cantidad" fill="#82ca9d"/>
             </BarChart>
         </ResponsiveContainer>
     );

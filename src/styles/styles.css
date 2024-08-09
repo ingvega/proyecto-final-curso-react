@@ -29,8 +29,8 @@ button:hover{
 
 
 .form-container{
-    max-width: 400px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 50px auto;
     padding: 20px;
     border: 1px solid rgb(174, 191, 213);
     background: #e1e4f1;
@@ -44,6 +44,8 @@ button:hover{
 .form-group label{
     display: block;
     margin-bottom: 5px;
+    text-align: left;
+    font-weight: bold;
 }
 
 .form-group input{
@@ -63,6 +65,13 @@ button:hover{
     margin: 5px;
     padding: 10px 20px;
     width: auto;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .contenedor-grafica{
@@ -71,13 +80,15 @@ button:hover{
 }
 
 .contenedor-responsive{
-    width: 100%!important;
+    width: 80%!important;
     height: 400px!important;
+    margin: 50px auto;
 }   
 
 /*Estilos para la tabla*/
 .data-table{
-    width:100%;
+    width:80%;
+    margin: 20px auto;
     border-collapse: collapse;
 }
 
@@ -88,7 +99,7 @@ button:hover{
 }
 
 .data-table th{
-    background-color: #f2f2f2;
-    text-align: left;
-
+    background-color: #048475;
+    text-shadow: 2px 2px rgba(0, 0, 0, .3);
+    color: #fff;
 }
